@@ -36,12 +36,12 @@ class Production
     }
 }
 
-$production1 = new Production('./img/rambo.jpg', 'Rambo: First Blood', 'En', 4);
-$production2 = new Production('./img/avatar.jpg', 'Avatar', 'It', 5);
-$production3 = new Production('./img/pierino.avif', 'Pierino Colpisce Ancora', 'It', 3);
-$production4 = new Production('./img/creed.jpg', 'Creed', 'En', 4);
-$production5 = new Production('./img/rampage.jpg', 'Rampage', 'En', 4);
-$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2', 'It', 5);
+$production1 = new Production('./img/rambo.jpg', 'Rambo: First Blood', 'EN', 4);
+$production2 = new Production('./img/avatar.jpg', 'Avatar', 'IT', 5);
+$production3 = new Production('./img/pierino.avif', 'Pierino Colpisce Ancora', 'IT', 3);
+$production4 = new Production('./img/creed.jpg', 'Creed', 'EN', 4);
+$production5 = new Production('./img/rampage.jpg', 'Rampage', 'EN', 4);
+$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2', 'IT', 5);
 
 // var_dump($production1, $production2);
 
