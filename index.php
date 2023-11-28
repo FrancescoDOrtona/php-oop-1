@@ -26,6 +26,15 @@ class Production
         return $this->rating;
     }
 
+    public function setRating($rating){
+        if(is_numeric($rating) && $rating >= 0 && $rating <= 5){
+                $this->rating = intval($rating);
+        } else {
+            $this->rating = 0;
+            var_dump('Error: insert a valid number');
+        }
+    }
+
     public function printMovie()
     {
         echo $this->getTitle();
