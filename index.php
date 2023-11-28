@@ -41,7 +41,7 @@ $production2 = new Production('./img/avatar.jpg', 'Avatar', 'It', 5);
 $production3 = new Production('./img/pierino.avif', 'Pierino Colpisce Ancora', 'It', 3);
 $production4 = new Production('./img/creed.jpg', 'Creed', 'En', 4);
 $production5 = new Production('./img/rampage.jpg', 'Rampage', 'En', 4);
-$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2 e La Camera dei Segreti', 'It', 5);
+$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2', 'It', 5);
 
 // var_dump($production1, $production2);
 
@@ -62,6 +62,7 @@ $movies = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bfd5138bab.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/app.css">
     <title>Film Production</title>
 </head>
@@ -82,7 +83,11 @@ $movies = [
                         <h3><?= $movie->title ?></h3>
                         <div class="movie__description">
                             <p><?= $movie->language ?></p>
-                            <p><?= $movie->rating ?></p>
+                            <p>
+                                <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
+                                    <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                                <?php } ?>
+                            </p>
                         </div>
                     </div>
 
