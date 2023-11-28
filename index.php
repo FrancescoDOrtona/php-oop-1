@@ -6,7 +6,7 @@ class Production
     public $title;
     public $language;
     public $rating;
-    public function __construct( string $img,string $title, string $language, int $rating)
+    public function __construct(string $img, string $title, string $language, int $rating)
     {
         $this->img = $img;
         $this->title = $title;
@@ -36,12 +36,12 @@ class Production
     }
 }
 
-$production1 = new Production('./img/rambo.jpg','Rambo: First Blood', 'En', 4);
-$production2 = new Production('./img/avatar.jpg','Avatar', 'It', 5);
-$production3 = new Production('./img/pierino.avif','Pierino Colpisce Ancora', 'It', 3);
-$production4 = new Production('./img/creed.jpg','Creed', 'En', 4);
-$production5 = new Production('./img/rampage.jpg','Rampage', 'En', 4);
-$production6 = new Production('./img/harry-2.jpg','Harry Potter 2 e La Camera dei Segreti', 'It', 5);
+$production1 = new Production('./img/rambo.jpg', 'Rambo: First Blood', 'En', 4);
+$production2 = new Production('./img/avatar.jpg', 'Avatar', 'It', 5);
+$production3 = new Production('./img/pierino.avif', 'Pierino Colpisce Ancora', 'It', 3);
+$production4 = new Production('./img/creed.jpg', 'Creed', 'En', 4);
+$production5 = new Production('./img/rampage.jpg', 'Rampage', 'En', 4);
+$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2 e La Camera dei Segreti', 'It', 5);
 
 // var_dump($production1, $production2);
 
@@ -79,9 +79,11 @@ $movies = [
                 ?>
                     <div class="movie">
                         <img src="<?= $movie->img ?>" alt="">
-                        <p class="movie__description">
-                            <?php $movie->printMovie() ?>
-                        </p>
+                        <h3><?= $movie->title ?></h3>
+                        <div class="movie__description">
+                            <p><?= $movie->language ?></p>
+                            <p><?= $movie->rating ?></p>
+                        </div>
                     </div>
 
                 <?php
