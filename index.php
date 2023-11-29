@@ -66,12 +66,7 @@ $movies = [
                         <h3><?= $movie->title ?></h3>
                         <div class="movie__description">
                             <p><?= $movie->language ?></p>
-                            <?php if($movie instanceof Movie) {?>
-                                <p>Profits: <?= $movie->getProfit() ?> &euro;</p>
-                                <p>Duration: <?= $movie->getDuration() ?> min</p>
-                            <?php } else {?>
-                                <p>Season: <?= $movie->getSeason() ?></p>
-                            <?php } ?>
+                            <?php $movie->getDetails() ?>
                             <p>
                                 <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
                                     <i class="fa-solid fa-star" style="color: #ffffff;"></i>

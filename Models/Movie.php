@@ -39,6 +39,11 @@ class Movie extends Production
             throw new Exception("Duration value not valid");
         }
     }
+
+    public function getDetails(){
+        echo "<p>Profits:  {$this->getProfit()}  &euro;</p>";
+        echo "<p>Duration:  {$this->getDuration()}  min</p>"; 
+    }
 }
 
 

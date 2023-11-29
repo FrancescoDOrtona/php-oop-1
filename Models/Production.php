@@ -36,12 +36,7 @@ class Production
         }
     }
 
-    public function printMovie()
-    {
-        echo $this->getTitle();
-        echo '<br>';
-        echo $this->getLanguage();
-        echo '<br>';
-        echo $this->getRating();
+    public function getDetails()
+    {       
     }
 }

@@ -25,6 +25,10 @@ class Serie extends Production
             throw new Exception("Season value not valid");
         }
     }
+
+    public function getDetails(){       
+        echo "<p>Season:  {$this->getSeason()} </p>";
+    }
 }
 
 
