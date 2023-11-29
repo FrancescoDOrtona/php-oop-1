@@ -7,8 +7,8 @@ class Movie extends Production {
 
     public function __construct(string $img, string $title, string $language, int $rating, int $profit, int $duration) {
         parent::__construct($img, $title, $language, $rating);
-        $this->profit = $profit;
-        $this->duration = $duration;
+        $this->setProfit( $profit );
+        $this->setDuration( $duration );
     }
     public function getProfit(){
         return $this->profit;
@@ -19,9 +19,9 @@ class Movie extends Production {
 
     public function setProfit($profit){
         if(is_numeric($profit) && $profit > 0){
-        $this->profit = $profit;
-    } else {
-        throw new Exception("Profit value not valid");
+            $this->profit = number_format($profit);
+        } else {
+            throw new Exception("Profit value not valid");
     }
 
     }
@@ -34,3 +34,10 @@ class Movie extends Production {
         }
     }
 }
+
+$movie1 = new Movie('./img/rambo.jpg', 'Rambo: First Blood', 'EN', 4, 340000, 150);
+$movie2 = new Movie('./img/avatar.jpg', 'Avatar', 'IT', 5, 700000, 190);
+$movie3 = new Movie('./img/pierino.avif', 'Pierino Colpisce Ancora', 'IT', 3, 120000, 80);
+$movie4 = new Movie('./img/creed.jpg', 'Creed', 'EN', 4, 450000, 130);
+$movie5 = new Movie('./img/rampage.jpg', 'Rampage', 'EN', 4, 260000, 120);
+$movie6 = new Movie('./img/harry-2.jpg', 'Harry Potter 2', 'IT', 5, 1200000, 170);

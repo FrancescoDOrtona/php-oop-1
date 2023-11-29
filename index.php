@@ -48,23 +48,17 @@ class Production
     }
 }
 
-$production1 = new Production('./img/rambo.jpg', 'Rambo: First Blood', 'EN', 4);
-$production2 = new Production('./img/avatar.jpg', 'Avatar', 'IT', 5);
-$production3 = new Production('./img/pierino.avif', 'Pierino Colpisce Ancora', 'IT', 3);
-$production4 = new Production('./img/creed.jpg', 'Creed', 'EN', 4);
-$production5 = new Production('./img/rampage.jpg', 'Rampage', 'EN', 4);
-$production6 = new Production('./img/harry-2.jpg', 'Harry Potter 2', 'IT', 5);
-
-// var_dump($production1, $production2);
 
 $movies = [
-    $production1,
-    $production2,
-    $production3,
-    $production4,
-    $production5,
-    $production6
+    $movie1,
+    $movie2,
+    $movie3,
+    $movie4,
+    $movie5,
+    $movie6
 ];
+
+// var_dump($movies);
 
 ?>
 
@@ -95,6 +89,8 @@ $movies = [
                         <h3><?= $movie->title ?></h3>
                         <div class="movie__description">
                             <p><?= $movie->language ?></p>
+                            <p>Profits: <?= $movie->getProfit() ?> &euro;</p>
+                            <p>Duration: <?= $movie->getDuration()?> min</p>
                             <p>
                                 <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
                                     <i class="fa-solid fa-star" style="color: #ffffff;"></i>
