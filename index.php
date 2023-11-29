@@ -11,7 +11,7 @@ class Production
         $this->img = $img;
         $this->title = $title;
         $this->language = $language;
-        $this->rating = $rating;
+        $this->setRating($rating);
     }
     public function getTitle()
     {
