@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ ."/Models/Movie.php";
-require_once __DIR__ ."/Models/Serie.php";
+require_once __DIR__ . "/Models/Movie.php";
+require_once __DIR__ . "/Models/Serie.php";
 
 class Production
 {
@@ -29,9 +29,10 @@ class Production
         return $this->rating;
     }
 
-    public function setRating($rating){
-        if(is_numeric($rating) && $rating >= 0 && $rating <= 5){
-                $this->rating = intval($rating);
+    public function setRating($rating)
+    {
+        if (is_numeric($rating) && $rating >= 0 && $rating <= 5) {
+            $this->rating = intval($rating);
         } else {
             $this->rating = 0;
             var_dump('Error: insert a valid number');
@@ -104,7 +105,7 @@ $series = [
                         <div class="movie__description">
                             <p><?= $movie->language ?></p>
                             <p>Profits: <?= $movie->getProfit() ?> &euro;</p>
-                            <p>Duration: <?= $movie->getDuration()?> min</p>
+                            <p>Duration: <?= $movie->getDuration() ?> min</p>
                             <p>
                                 <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
                                     <i class="fa-solid fa-star" style="color: #ffffff;"></i>
