@@ -60,6 +60,17 @@ $movies = [
 
 // var_dump($movies);
 
+$series = [
+    $serie1,
+    $serie2,
+    $serie3,
+    $serie4,
+    $serie5,
+    $serie6
+];
+
+// var_dump($series)
+
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +107,33 @@ $movies = [
                             <p>Duration: <?= $movie->getDuration()?> min</p>
                             <p>
                                 <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
+                                    <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                                <?php } ?>
+                            </p>
+                        </div>
+                    </div>
+
+                <?php
+                }
+                ?>
+            </div>
+        </section>
+        <section class="container movies">
+            <div class="section-title">
+                <h2>Series</h2>
+            </div>
+            <div class="grid">
+                <?php
+                foreach ($series as $serie) {
+                ?>
+                    <div class="movie">
+                        <img src="<?= $serie->img ?>" alt="">
+                        <h3><?= $serie->title ?></h3>
+                        <div class="movie__description">
+                            <p><?= $serie->language ?></p>
+                            <p>Season: <?= $serie->getSeason() ?></p>
+                            <p>
+                                <?php for ($i = 0; $i < $serie->rating; $i++) { ?>
                                     <i class="fa-solid fa-star" style="color: #ffffff;"></i>
                                 <?php } ?>
                             </p>

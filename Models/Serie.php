@@ -6,7 +6,7 @@ class Serie extends Production {
 
     public function __construct(string $img, string $title, string $language, int $rating, $season) {
         parent::__construct($img, $title, $language, $rating);
-        $this->season = $season;
+        $this->setSeason( $season );
     }
 
     public function getSeason(){
@@ -22,4 +22,11 @@ class Serie extends Production {
     }
 
 }
+
+$serie1 = new Serie('./img/altered.webp','Altered Carbon', 'EN', 3, 1);
+$serie2 = new Serie('./img/dexter.jpg', 'Dexter', 'EN', 4, 2);
+$serie3 = new Serie('./img/mare-fuori.webp', 'Mare Fuori', 'IT', 2, 1);
+$serie4 = new Serie('./img/orange.webp', 'Orange is The New Black', 'EN', 5, 3);
+$serie5 = new Serie('./img/the-boys.jpg', 'The Boys', 'EN', 5, 2);
+$serie6 = new Serie('./img/upload.jpg', 'Upload', 'IT', 3, 1);
 
