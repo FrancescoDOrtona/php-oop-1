@@ -80,6 +80,9 @@ $movies = [
     </header>
     <main>
         <section class="container movies">
+            <div class="section-title">
+                <h2>Movies</h2>
+            </div>
             <div class="grid">
                 <?php
                 foreach ($movies as $movie) {

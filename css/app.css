@@ -43,6 +43,10 @@ body {
     font-weight: bold;
 }
 
+.section-title{
+  margin-bottom: 20px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
