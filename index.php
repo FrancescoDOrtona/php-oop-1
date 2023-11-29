@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ ."/Models/Movie.php";
+require_once __DIR__ ."/Models/Serie.php";
+
 class Production
 {
     public $img;
