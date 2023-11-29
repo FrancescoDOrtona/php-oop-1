@@ -3,52 +3,21 @@
 require_once __DIR__ . "/Models/Movie.php";
 require_once __DIR__ . "/Models/Serie.php";
 
-class Production
-{
-    public $img;
-    public $title;
-    public $language;
-    public $rating;
-    public function __construct(string $img, string $title, string $language, int $rating)
-    {
-        $this->img = $img;
-        $this->title = $title;
-        $this->language = $language;
-        $this->setRating($rating);
-    }
-    public function getTitle()
-    {
-        return $this->title;
-    }
-    public function getLanguage()
-    {
-        return $this->language;
-    }
-    public function getRating()
-    {
-        return $this->rating;
-    }
 
-    public function setRating($rating)
-    {
-        if (is_numeric($rating) && $rating >= 0 && $rating <= 5) {
-            $this->rating = intval($rating);
-        } else {
-            $this->rating = 0;
-            var_dump('Error: insert a valid number');
-        }
-    }
 
-    public function printMovie()
-    {
-        echo $this->getTitle();
-        echo '<br>';
-        echo $this->getLanguage();
-        echo '<br>';
-        echo $this->getRating();
-    }
-}
+$movie1 = new Movie('./img/rambo.jpg', 'Rambo: First Blood', 'EN', 4, 340000, 150);
+$movie2 = new Movie('./img/avatar.jpg', 'Avatar', 'IT', 5, 700000, 190);
+$movie3 = new Movie('./img/pierino.avif', 'Pierino Colpisce Ancora', 'IT', 3, 120000, 80);
+$movie4 = new Movie('./img/creed.jpg', 'Creed', 'EN', 4, 450000, 130);
+$movie5 = new Movie('./img/rampage.jpg', 'Rampage', 'EN', 4, 260000, 120);
+$movie6 = new Movie('./img/harry-2.jpg', 'Harry Potter 2', 'IT', 5, 1200000, 170);
 
+$serie1 = new Serie('./img/altered.webp', 'Altered Carbon', 'EN', 3, 1);
+$serie2 = new Serie('./img/dexter.jpg', 'Dexter', 'EN', 4, 2);
+$serie3 = new Serie('./img/mare-fuori.webp', 'Mare Fuori', 'IT', 2, 1);
+$serie4 = new Serie('./img/orange.webp', 'Orange is The New Black', 'EN', 5, 3);
+$serie5 = new Serie('./img/the-boys.jpg', 'The Boys', 'EN', 5, 2);
+$serie6 = new Serie('./img/upload.jpg', 'Upload', 'IT', 3, 1);
 
 $movies = [
     $movie1,
@@ -56,12 +25,7 @@ $movies = [
     $movie3,
     $movie4,
     $movie5,
-    $movie6
-];
-
-// var_dump($movies);
-
-$series = [
+    $movie6,
     $serie1,
     $serie2,
     $serie3,
@@ -96,16 +60,18 @@ $series = [
                 <h2>Movies</h2>
             </div>
             <div class="grid">
-                <?php
-                foreach ($movies as $movie) {
-                ?>
+                <?php foreach ($movies as $movie) { ?>
                     <div class="movie">
                         <img src="<?= $movie->img ?>" alt="">
                         <h3><?= $movie->title ?></h3>
                         <div class="movie__description">
                             <p><?= $movie->language ?></p>
-                            <p>Profits: <?= $movie->getProfit() ?> &euro;</p>
-                            <p>Duration: <?= $movie->getDuration() ?> min</p>
+                            <?php if($movie instanceof Movie) {?>
+                                <p>Profits: <?= $movie->getProfit() ?> &euro;</p>
+                                <p>Duration: <?= $movie->getDuration() ?> min</p>
+                            <?php } else {?>
+                                <p>Season: <?= $movie->getSeason() ?></p>
+                            <?php } ?>
                             <p>
                                 <?php for ($i = 0; $i < $movie->rating; $i++) { ?>
                                     <i class="fa-solid fa-star" style="color: #ffffff;"></i>
@@ -114,36 +80,7 @@ $series = [
                         </div>
                     </div>
 
-                <?php
-                }
-                ?>
-            </div>
-        </section>
-        <section class="container movies">
-            <div class="section-title">
-                <h2>Series</h2>
-            </div>
-            <div class="grid">
-                <?php
-                foreach ($series as $serie) {
-                ?>
-                    <div class="movie">
-                        <img src="<?= $serie->img ?>" alt="">
-                        <h3><?= $serie->title ?></h3>
-                        <div class="movie__description">
-                            <p><?= $serie->language ?></p>
-                            <p>Season: <?= $serie->getSeason() ?></p>
-                            <p>
-                                <?php for ($i = 0; $i < $serie->rating; $i++) { ?>
-                                    <i class="fa-solid fa-star" style="color: #ffffff;"></i>
-                                <?php } ?>
-                            </p>
-                        </div>
-                    </div>
-
-                <?php
-                }
-                ?>
+                <?php } ?>
             </div>
         </section>
     </main>
